@@ -1,0 +1,5 @@
+Card Scan
+ 
+Card Scan can be used to parse the text captured when a California driver's license is swiped through a cheap USB card reader.  This is a great tool when California companies are required by regulations to verify a person's identify.  Just attach an inexpensive USB card reader to a computer, fire up a web browser and swipe away. 
+
+Copyright (C) 2014 Chris Navigato <chris@navigato.com> as above

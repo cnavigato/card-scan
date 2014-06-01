@@ -1,0 +1,58 @@
+{{extend 'layout.html'}}
+<style>
+
+#input_holder {
+ position:absolute;
+ left:-500px;
+ top:-500px;
+ width:255px;
+}
+#result_parse {
+ background-image:url("{{=URL('static/images','cdlimage-bg.png')}}");
+ width:480px;
+ height:307px;
+}
+#expires {
+position:relative;
+font-size:.75em;
+color:red;
+left:45px;
+top:80px;
+}
+#driver_license {
+position:relative;
+font-size:1.25em;
+color:red;
+font-weight:bold;
+left:100px;
+top:80px;
+}
+#lic_class {
+position:relative;
+left:225px;
+top:70px;
+}
+#cdl_contact {
+position:absolute;
+left:200px;
+top:110px;
+}
+
+#cdl_attrib {
+position:absolute;
+left:200px;
+top:200px;
+}
+</style>
+<script>
+$(document).ready(function() {   
+  $("#progress_bar").hide();        
+});
+</script>
+{{=action}}
+{{=input_fragment}}
+<div id="display_license"></div>
+
+
+
+

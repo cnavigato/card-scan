@@ -1,0 +1,89 @@
+application: propane-flow-598
+version: 01
+api_version: 1
+runtime: python27
+threadsafe: True    # true for WSGI & concurrent requests (Python 2.7 only)
+
+#derived_file_type:
+#- python_precompiled
+
+handlers:
+
+# static files
+- url: /(.+?)/static/_\d.\d.\d\/(.+)
+  static_files: applications/\1/static/\2
+  upload: applications/(.+?)/static/(.+)
+  secure: optional
+  expiration: "365d"
+
+- url: /(.+?)/static/(.+)
+  static_files: applications/\1/static/\2
+  upload: applications/(.+?)/static/(.+)
+  secure: optional
+
+- url: /favicon.ico
+  static_files: applications/card_scan/static/favicon.ico
+  upload: applications/card_scan/static/favicon.ico
+
+- url: /robots.txt
+  static_files: applications/card_scan/static/robots.txt
+  upload: applications/card_scan/static/robots.txt
+
+
+- url: /_ah/queue/default
+  script: gaehandler.wsgiapp
+  login: admin
+
+- url: .*
+  script: gaehandler.wsgiapp
+  secure: optional
+
+admin_console:
+  pages:
+  - name: Appstats
+    url: /_ah/stats
+    
+libraries:
+- name: PIL
+  version: latest
+
+skip_files: |
+ ^(.*/)?(
+ (app\.yaml)|
+ (app\.yml)|
+ (index\.yaml)|
+ (index\.yml)|
+ (#.*#)|
+ (.*~)|
+ (.*\.py[co])|
+ (.*/RCS/.*)|
+ (\..*)|
+ (workbench/.*)|
+ (applications/examples/.*)|
+ ((examples|welcome)\.(w2p|tar))|
+ (applications/.*?/(cron|databases|errors|cache|sessions)/.*)|
+ ((logs|scripts)/.*)|
+ (anyserver\.py)|
+ (web2py\.py)|
+ ((cgi|fcgi|modpython|wsgi)handler\.py)|
+ (epydoc\.(conf|css))|
+ (httpserver\.log)|
+ (logging\.example\.conf)|
+ (route[rs]\.example\.py)|
+ (setup_(app|exe)\.py)|
+ (splashlogo\.gif)|
+ (parameters_\d+\.py)|
+ (options_std.py)|
+ (gluon/tests/.*)|
+ (gluon/rocket\.py)|
+ (contrib/(gateways|markdown|memcache|pymysql)/.*)|
+ (contrib/(populate|taskbar_widget)\.py)|
+ (google_appengine/.*)|
+ (.*\.(bak|orig))|
+ )$
+
+builtins:
+- remote_api: on
+- appstats: on
+- admin_redirect: on
+- deferred: on

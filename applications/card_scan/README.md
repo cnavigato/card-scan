@@ -27,5 +27,13 @@ Returns a Python dictionary:
     
 In action here:
 
-    http://
+    http://propane-flow-598.appspot.com
+    
+- [ ] Card Scan
+  - [ ] add datastore
+  - [ ] finish docs
+  - [ ] deploy and enjoy
+  - [ ] commit future commits
+- [ ] ...?
+- [ ] Profit!
    

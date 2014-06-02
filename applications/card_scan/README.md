@@ -17,7 +17,7 @@ Returns a Python dictionary:
     swipe_dict['cdl_h_in']
     swipe_dict['cdl_weight']
     swipe_dict['cdl_eyes']
-    swipe_dict['cdl_hair']   
+    swipe_dict['cdl_hair']
     swipe_dict['cdl_city']
     swipe_dict['cdl_full_name']
     swipe_dict['cdl_l_name']
@@ -29,11 +29,11 @@ In action here:
 
     http://propane-flow-598.appspot.com
     
-- [ ] Card Scan
+- [ ] TODO - Card Scan
   - [ ] add datastore
-  - [ ] finish docs
-  - [ ] deploy and enjoy
-  - [ ] commit future commits
-- [ ] ...?
+  - [ ] present dictionary of key, values
+  - [ ] develop lookups based on key, values
+  - [ ] create another TODO list for future releases
+- [ ] Deploy and Enjoy
 - [ ] Profit!
    

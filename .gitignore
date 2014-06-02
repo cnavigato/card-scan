@@ -7,7 +7,6 @@ contrib/memcache/
 contrib/pymysql/
 contrib/populate/
 contrib/taskbar_widget/
-contrib/
 *.pyc
 databases/
 errors/
